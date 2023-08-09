@@ -17,7 +17,7 @@ RUN apk add --no-cache git gcc libc-dev make bash gettext binutils-gold coreutil
     cscli collections install crowdsecurity/linux && \
     cscli parsers install crowdsecurity/whitelists
 
-FROM alpine:latest as build-slim
+FROM alpine:3.18.3 as build-slim
 
 RUN apk add --no-cache --repository=http://dl-cdn.alpinelinux.org/alpine/edge/community tzdata yq bash && \
     mkdir -p /staging/etc/crowdsec && \
